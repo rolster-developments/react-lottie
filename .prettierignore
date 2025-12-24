@@ -1,0 +1,8 @@
+# Ignore artifacts:
+.angular
+.scannerwork
+.vscode
+build
+coverage
+node_modules
+public

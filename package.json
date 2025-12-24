@@ -1,0 +1,73 @@
+{
+  "name": "@rolster/react-lottie",
+  "version": "19.0.0",
+  "type": "module",
+  "description": "Package containing UI components for Lottie in React.",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/lib.js",
+  "unpkg": "dist/es/lib.js",
+  "types": "dist/esm/index.d.ts",
+  "license": "MIT",
+  "author": "Rolster Technology <rolster.developments@gmail.com>",
+  "contributors": [
+    {
+      "name": "Daniel Andrés Castillo Pedroza",
+      "email": "ing.dacastillop@gmail.com"
+    }
+  ],
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "prettier": "prettier . --write",
+    "clean": "rimraf ./dist",
+    "build:css": "sass src/:dist/esm/ --style=compressed",
+    "prettier:css": "prettier --write dist/**/*.css --ignore-path .prettierignore",
+    "build": "npm run clean && tsc -p tsconfig.app.json && npm run build:css && npm run prettier:css && rollup -c rollup.config.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "lottie-web": "^5.10.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/plugin-proposal-decorators": "^7.21.0",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-typescript": "^11.1.3",
+    "@rolster/rollup": "^1.0.8",
+    "@rolster/styles-foundations": "^2.6.16",
+    "@rolster/types": "^1.1.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "match-sorter": "^6.3.1",
+    "object-path": "^0.11.8",
+    "prettier": "^2.8.8",
+    "rollup-plugin-import-css": "^3.3.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-swc": "^0.2.1",
+    "sort-by": "^0.0.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.4.1"
+  },
+  "keywords": [
+    "lottie",
+    "react",
+    "lottie react",
+    "react lottie",
+    "lottie web",
+    "animation",
+    "component"
+  ]
+}
