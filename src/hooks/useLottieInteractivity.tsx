@@ -24,10 +24,10 @@ export function getContainerCursorPosition(
 }
 
 export type InitInteractivity = {
-  wrapperRef: React.RefObject<HTMLDivElement>;
-  animationItem: InteractivityProps['lottieObj']['animationItem'];
   actions: InteractivityProps['actions'];
+  animationItem: InteractivityProps['lottieObj']['animationItem'];
   mode: InteractivityProps['mode'];
+  wrapperRef: React.RefObject<HTMLDivElement | null>;
 };
 
 export const useInitInteractivity = ({

@@ -24,7 +24,7 @@
     "clean": "rimraf ./dist",
     "build:css": "sass src/:dist/esm/ --style=compressed",
     "prettier:css": "prettier --write dist/**/*.css --ignore-path .prettierignore",
-    "build": "npm run clean && tsc -p tsconfig.app.json && npm run build:css && npm run prettier:css && rollup -c rollup.config.js",
+    "build": "npm run clean && tsc -p tsconfig.app.json && rollup -c rollup.config.js",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "prepublishOnly": "npm run build"
@@ -54,12 +54,13 @@
     "match-sorter": "^6.3.1",
     "object-path": "^0.11.8",
     "prettier": "^2.8.8",
-    "rollup-plugin-import-css": "^3.3.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-swc": "^0.2.1",
     "sort-by": "^0.0.2",
     "typescript": "^5.7.2",
     "vite": "^6.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rolster-developments/react-lottie.git"
   },
   "keywords": [
     "lottie",
@@ -69,5 +70,8 @@
     "lottie web",
     "animation",
     "component"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
