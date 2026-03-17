@@ -8,9 +8,10 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
+    "jsx": "react-jsx",
     "lib": ["DOM", "ES2020"],
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -22,8 +23,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "ES2020",
-    "jsx": "react-jsx",
-    "typeRoots": ["node_modules/@types/**/*.d.ts", "src/**/*.d.ts"]
+    "types": ["vitest/globals"]
   },
   "files": ["node_modules/@rolster/types/index.d.ts"],
   "include": ["src"],
