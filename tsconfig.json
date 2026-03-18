@@ -11,7 +11,7 @@
     "jsx": "react-jsx",
     "lib": ["DOM", "ES2020"],
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -26,6 +26,5 @@
     "types": ["vitest/globals"]
   },
   "files": ["node_modules/@rolster/types/index.d.ts"],
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"]
 }
