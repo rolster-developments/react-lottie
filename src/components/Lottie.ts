@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import useLottie from '../hooks/useLottie';
 import useLottieInteractivity from '../hooks/useLottieInteractivity';
 import { LottieComponentProps } from '../types';

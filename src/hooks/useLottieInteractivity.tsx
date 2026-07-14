@@ -1,5 +1,6 @@
 import { AnimationSegment } from 'lottie-web';
-import React, { useEffect, ReactElement } from 'react';
+import React, { ReactElement,useEffect } from 'react';
+
 import { InteractivityProps } from '../types';
 
 export function getContainerVisibility(container: Element): number {

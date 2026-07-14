@@ -1,17 +1,18 @@
 import lottie, {
   AnimationConfigWithData,
-  AnimationItem,
   AnimationDirection,
+  AnimationItem,
   AnimationSegment,
   RendererType
 } from 'lottie-web';
 import {
   CSSProperties,
+  ReactElement,
   useEffect,
   useRef,
-  ReactElement,
   useState
 } from 'react';
+
 import {
   Listener,
   LottieOptions,
