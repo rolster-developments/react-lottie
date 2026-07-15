@@ -6,7 +6,14 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: ['dist/**', 'node_modules/**', '**/*.test.ts', '**/*.test.tsx']
+    ignores: [
+      '**/dist/**',
+      '**/node_modules/**',
+      '**/*.js',
+      '**/*.cjs',
+      '**/*.spec.ts',
+      '**/*.spec.tsx'
+    ]
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -23,7 +30,7 @@ export default tseslint.config(
       'simple-import-sort/imports': [
         'warn',
         {
-          groups: [['^@'], ['^\\w'], ['^\\.'], ['^\\u0000']]
+          groups: [['^@', '^\\w'], ['^\\.'], ['^\\u0000']]
         }
       ],
       'simple-import-sort/exports': 'error',
