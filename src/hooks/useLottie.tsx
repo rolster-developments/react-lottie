@@ -12,7 +12,6 @@ import {
   useRef,
   useState
 } from 'react';
-
 import {
   Listener,
   LottieOptions,
