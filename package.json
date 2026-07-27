@@ -28,7 +28,7 @@
     "dist/"
   ],
   "scripts": {
-    "prettier": "prettier --write \"src/**/*.{ts}\"",
+    "prettier": "prettier --write .",
     "prettier:css": "prettier --write dist/**/*.css --ignore-path .prettierignore",
     "clean": "rimraf ./dist",
     "dev": "vite",
