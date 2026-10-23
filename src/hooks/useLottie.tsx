@@ -185,28 +185,24 @@ const useLottie = <T extends RendererType = 'svg'>(
         listener.handler != null
     );
 
-    if (!listeners.length) {
+    const animation = animationInstanceRef.current;
+
+    if (!animation || !listeners.length) {
       return;
     }
 
-    const deregisterList = listeners.map((listener) => {
-      animationInstanceRef.current?.addEventListener(
-        listener.name,
-        listener.handler
-      );
-
-      return () => {
-        animationInstanceRef.current?.removeEventListener(
-          listener.name,
-          listener.handler
-        );
-      };
+    listeners.forEach(({ handler, name }) => {
+      animation.addEventListener(name, handler);
     });
 
     return () => {
-      deregisterList.forEach((deregister) => deregister());
+      listeners.forEach(({ handler, name }) => {
+        animation.removeEventListener(name, handler);
+      });
     };
   }, [
+    animationData,
+    loop,
     onComplete,
     onLoopComplete,
     onEnterFrame,

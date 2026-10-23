@@ -212,4 +212,32 @@ describe('useLottie - Event listeners', () => {
       second
     );
   });
+
+  it('should deregister the handlers on unmount', () => {
+    const onComplete = vi.fn();
+
+    const { unmount } = renderLottie({ onComplete });
+
+    unmount();
+
+    expect(animationItem.removeEventListener).toHaveBeenCalledWith(
+      'complete',
+      onComplete
+    );
+  });
+
+  it('should move the handlers to the animation that replaces it', () => {
+    const onComplete = vi.fn();
+
+    const { setProps } = renderLottie({ onComplete });
+
+    setProps({ animationData: { layers: [], v: '9.9.9' }, onComplete });
+
+    expect(loadAnimation).toHaveBeenCalledTimes(2);
+    expect(animationItem.removeEventListener).toHaveBeenCalledWith(
+      'complete',
+      onComplete
+    );
+    expect(animationItem.addEventListener).toHaveBeenCalledTimes(2);
+  });
 });
