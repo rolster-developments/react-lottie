@@ -25,7 +25,10 @@ const { animationItem, loadAnimation } = vi.hoisted(() => {
     stop: vi.fn()
   };
 
-  return { animationItem, loadAnimation: vi.fn(() => animationItem) };
+  return {
+    animationItem,
+    loadAnimation: vi.fn((_config: LiteralObject) => animationItem)
+  };
 });
 
 vi.mock('lottie-web', () => ({ default: { loadAnimation } }));
