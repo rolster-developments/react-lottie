@@ -31,12 +31,10 @@
   ],
   "scripts": {
     "prettier": "prettier --write .",
-    "prettier:css": "prettier --write dist/**/*.css --ignore-path .prettierignore",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "clean": "rimraf ./dist",
     "dev": "vite",
-    "build:css": "sass src/:dist/esm/ --style=compressed",
     "build": "npm run clean && tsc -p tsconfig.app.json && rolster-rollup",
     "test": "vitest run",
     "prepublishOnly": "npm run build"
